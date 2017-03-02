@@ -34,7 +34,7 @@ import android.content.Context;
                 EditText search_departure = (EditText) findViewById(R.id.search_departure);
 
                 Context context = getApplicationContext();
-                CharSequence text = "Veuillez entrer une destination et un ville de départ";
+                CharSequence text = getString(R.string.error );
                 int duration = Toast.LENGTH_SHORT;
 
                 Toast toast = Toast.makeText(context, text, duration);

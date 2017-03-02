@@ -8,6 +8,7 @@
     <string name="search_button">Rechercher</string>
     <string name="go">Go</string>
     <string name="fleche">" ------> "</string>
+    <string name="error">"Veuillez entrer une destination et un ville de départ"</string>
 
 
 </resources>

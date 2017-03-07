@@ -17,9 +17,9 @@ public class SearchItinaryActivity extends AppCompatActivity {
 
         public static String ozef;
         public static String fezo;
-        EditText search_destination;
-        EditText search_departure;
-        EditText search_date;
+        public EditText search_destination;
+        public EditText search_departure;
+        public EditText search_date;
 
 
         @Override

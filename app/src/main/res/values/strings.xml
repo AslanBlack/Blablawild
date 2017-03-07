@@ -7,8 +7,8 @@
     <string name="search_date">Date</string>
     <string name="search_button">Rechercher</string>
     <string name="go">Go</string>
-    <string name="fleche">" ------> "</string>
-    <string name="error">"Veuillez entrer une destination et un ville de départ"</string>
+    <string name="fleche"> ------> </string>
+    <string name="error">Veuillez entrer une destination et un ville de départ et une date</string>
 
 
 </resources>

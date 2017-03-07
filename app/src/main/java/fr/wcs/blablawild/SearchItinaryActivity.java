@@ -10,14 +10,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Context;
 
+import java.util.Date;
 
 
-    public class SearchItinaryActivity extends AppCompatActivity {
+public class SearchItinaryActivity extends AppCompatActivity {
 
         public static String ozef;
         public static String fezo;
         EditText search_destination;
         EditText search_departure;
+        EditText search_date;
 
 
         @Override
@@ -32,6 +34,10 @@ import android.content.Context;
 
                 EditText search_destination = (EditText) findViewById(R.id.search_destination);
                 EditText search_departure = (EditText) findViewById(R.id.search_departure);
+                EditText search_date = (EditText) findViewById(R.id.search_date);
+                String mDeparture = search_departure.getText().toString();
+                String mDestination = search_destination.getText().toString();
+                String mDate = search_date.getText().toString();
 
                 Context context = getApplicationContext();
                 CharSequence text = getString(R.string.error );
@@ -39,15 +45,14 @@ import android.content.Context;
 
                 Toast toast = Toast.makeText(context, text, duration);
 
-                if (search_destination.length() > 0 && search_departure.length() > 0) {
+                if (search_destination.length() > 0 && search_departure.length() > 0 && search_date.length() > 0) {
 
+                    SearchRequestModel request = new SearchRequestModel( mDeparture, mDestination, mDate);
                     Intent changeActivity = new Intent(SearchItinaryActivity.this, ViewSearchItinaryResultsListActivity.class);
 
-                    String message = search_departure.getText().toString();
-                    String message2 = search_destination.getText().toString();
 
-                    changeActivity.putExtra("osef", message );
-                    changeActivity.putExtra("feso", message2 );
+                    changeActivity.putExtra("request", request);
+
 
                     startActivity(changeActivity);
                 }

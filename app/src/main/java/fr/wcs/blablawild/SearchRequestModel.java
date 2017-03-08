@@ -12,9 +12,9 @@ import static fr.wcs.blablawild.R.id.search_departure;
 public class SearchRequestModel  implements Parcelable {
 
 
-    public String mDeparture;
-    public String mDestination;
-    public String mDate;
+    private String mDeparture;
+    private String mDestination;
+    private String mDate;
 
 
 

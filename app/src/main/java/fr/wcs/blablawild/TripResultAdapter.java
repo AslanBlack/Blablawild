@@ -1,72 +1,77 @@
 package fr.wcs.blablawild;
 
+import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.Query;
+
+
 import java.util.ArrayList;
+import java.util.List;
 
-/**
- * Created by apprenti on 07/03/17.
- */
 
-public class TripResultAdapter extends BaseAdapter {
 
-    private Context context;
-    private ArrayList<TripResultModel> trip;
 
-    public TripResultAdapter(Context context, ArrayList<TripResultModel> trip) {
-        this.context = context;
-        this.trip = trip;
+
+public class TripResultAdapter extends FirebaseListAdapter<ItineraryModel>{
+
+
+
+
+    EditText editTextDate;
+    EditText editTextDeparture;
+    EditText editTextPrice;
+    EditText editTextDestination;
+
+    TextView tripDriverFirstName;
+    TextView departureDate;
+    TextView tripPrice;
+
+
+    //private ArrayList<TripResultModel> trip;
+
+    public TripResultAdapter(Query ref, Activity activity, int layout) {
+        super(ref, ItineraryModel.class, layout, activity);
+
+        this.tripDriverFirstName = tripDriverFirstName;
+        this.departureDate = departureDate;
+        this.tripPrice = tripPrice;
+
+
+
     }
+
+
+
 
     @Override
-    public int getCount() {
-        return trip.size();
+    protected void populateView(View v, ItineraryModel newTrip) {
+
+
+        tripDriverFirstName = (TextView)v.findViewById(R.id.tripDriver);
+        departureDate = (TextView)v.findViewById(R.id.tripDateTime);
+        tripPrice = (TextView)v.findViewById(R.id.tripPrice);
+
+
+
+
+        tripDriverFirstName.setText(String.valueOf(newTrip.getDriverFistname()));
+        departureDate.setText(String.valueOf(newTrip.getDepartureDate()));
+        tripPrice.setText(String.valueOf(newTrip.getmPrice()));
+
     }
-
-
-
-    @Override
-    public Object getItem(int position) {
-        return trip.get(position);
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return position;
-    }
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        if (convertView == null) {
-            convertView = LayoutInflater.from(context).
-                    inflate(R.layout.trip_item, parent, false);
-        }
-
-        TripResultModel currentTrip = (TripResultModel) getItem(position);
-
-
-        TextView tripDateTime = (TextView)
-                convertView.findViewById(R.id.tripDateTime);
-        TextView tripDriver = (TextView)
-                convertView.findViewById(R.id.tripDriver);
-        TextView tripPrice = (TextView)
-                convertView.findViewById(R.id.tripPrice);
-
-
-        tripDateTime.setText(currentTrip.getmTripDateTime().toString());
-        tripDriver.setText(currentTrip.getmDriverName());
-
-        tripPrice.setText(currentTrip.getmTripPrice()+"");
-
-        return convertView;
-    }
-
-
-
 }
+
+
+

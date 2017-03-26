@@ -38,4 +38,17 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
+    <Button
+        android:text="@string/createTripButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/go"
+        android:layout_marginTop="23dp"
+        android:onClick="goTocreateTrip"
+        android:id="@+id/createTripButton"
+        android:layout_alignRight="@+id/go"
+        android:layout_alignEnd="@+id/go"
+        android:layout_alignLeft="@+id/go"
+        android:layout_alignStart="@+id/go" />
+
 </RelativeLayout>

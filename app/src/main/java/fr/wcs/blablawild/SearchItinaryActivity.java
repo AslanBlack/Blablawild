@@ -1,16 +1,21 @@
 package fr.wcs.blablawild;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Context;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 
 public class SearchItinaryActivity extends AppCompatActivity {
@@ -20,6 +25,9 @@ public class SearchItinaryActivity extends AppCompatActivity {
         EditText search_destination;
         EditText search_departure;
         EditText search_date;
+
+
+
 
 
         @Override
@@ -59,8 +67,16 @@ public class SearchItinaryActivity extends AppCompatActivity {
                 else toast.show();
 
 
+
+
+
             }
 
 
-    }
+
+
+
+
+
+}
 

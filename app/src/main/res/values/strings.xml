@@ -6,9 +6,17 @@
     <string name="search_destination">Destination</string>
     <string name="search_date">Date</string>
     <string name="search_button">Rechercher</string>
-    <string name="go">Go</string>
-    <string name="fleche"> ------> </string>
+    <string name="go">Recherchez un trajet</string>
+    <string name="createTripButton">Proposer un trajet</string>
+    <string name="create">Créer un trajet</string>
     <string name="error">Veuillez entrer une destination et un ville de départ et une date</string>
+
+    <string name="departure">Départ</string>
+    <string name="destination">Destination</string>
+    <string name="price">Prix</string>
+    <string name="date">Date</string>
+
+
 
 
 </resources>

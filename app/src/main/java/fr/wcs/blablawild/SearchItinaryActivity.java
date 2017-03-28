@@ -16,6 +16,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import android.view.View.OnClickListener;
+
 
 
 public class SearchItinaryActivity extends AppCompatActivity {
@@ -25,7 +27,16 @@ public class SearchItinaryActivity extends AppCompatActivity {
         EditText search_destination;
         EditText search_departure;
         EditText search_date;
+        Calendar myCalendar = Calendar.getInstance();
 
+
+    private void updateLabel() {
+
+        String myFormat = "MM/dd/yy"; //In which you need put here
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+
+        search_date.setText(sdf.format(myCalendar.getTime()));
+    }
 
 
 
@@ -34,10 +45,43 @@ public class SearchItinaryActivity extends AppCompatActivity {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_search_itinary);
-}
+            search_date = (EditText) findViewById(R.id.search_date);
 
+
+            final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+
+                @Override
+                public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                      int dayOfMonth) {
+                    // TODO Auto-generated method stub
+                    myCalendar.set(Calendar.YEAR, year);
+                    myCalendar.set(Calendar.MONTH, monthOfYear);
+                    myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                    updateLabel();
+                }
+
+            };
+
+            search_date.setOnClickListener(new OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    // TODO Auto-generated method stub
+                    new DatePickerDialog(SearchItinaryActivity.this, date, myCalendar
+                            .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                            myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+                }
+            });
+
+
+
+
+
+        }
 
             public void goToNextActivity(View view) {
+
+
 
 
                 EditText search_destination = (EditText) findViewById(R.id.search_destination);
@@ -70,7 +114,15 @@ public class SearchItinaryActivity extends AppCompatActivity {
 
 
 
+
+
             }
+
+
+
+
+
+
 
 
 

@@ -53,6 +53,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(changeToSearch);
 
     }
+
+    public void goTocreateTrip (View view){
+
+        Intent changeToCreateTrip = new Intent(MainActivity.this, SubmitItineraryActivity.class);
+
+        startActivity(changeToCreateTrip);
+
+    }
 }
 
 

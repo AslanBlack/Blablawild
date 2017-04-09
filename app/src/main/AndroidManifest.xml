@@ -18,9 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SearchItinaryActivity" android:label="@string/search_text" />
-
-        <activity android:name=".ViewSearchItinaryResultsListActivity"></activity>
+        <activity
+            android:name=".SearchItinaryActivity"
+            android:label="@string/search_text" />
+        <activity android:name=".ViewSearchItinaryResultsListActivity" />
+        <activity android:name=".SubmitItineraryActivity"></activity>
     </application>
 
 </manifest>

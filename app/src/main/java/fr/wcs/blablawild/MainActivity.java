@@ -61,6 +61,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(changeToCreateTrip);
 
     }
+
+    public void goToSignup (View view){
+
+        Intent changeToSignup = new Intent(MainActivity.this, SignupActivity.class);
+
+        startActivity(changeToSignup);
+
+    }
 }
 
 

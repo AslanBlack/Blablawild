@@ -22,7 +22,12 @@
             android:name=".SearchItinaryActivity"
             android:label="@string/search_text" />
         <activity android:name=".ViewSearchItinaryResultsListActivity" />
-        <activity android:name=".SubmitItineraryActivity"></activity>
+        <activity android:name=".SubmitItineraryActivity" />
+        <activity android:name=".AccountActivity" />
+        <activity
+            android:name=".SignupActivity"
+            android:label="@string/title_activity_signup"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -15,8 +15,8 @@
     <string name="destination">Destination</string>
     <string name="price">Prix</string>
     <string name="date">Date</string>
-
-
+    <string name="title_activity_signup">SignupActivity</string>
+    <string name="auth_failed">Echec</string>
 
 
 </resources>

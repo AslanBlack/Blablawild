@@ -69,6 +69,23 @@ public class MainActivity extends AppCompatActivity {
         startActivity(changeToSignup);
 
     }
+
+    public void goToSignin (View view){
+
+        Intent changeToSignin = new Intent(MainActivity.this, SigninActivity.class);
+
+        startActivity(changeToSignin);
+
+    }
+
+    public  void openAccount(){
+        Intent account = new Intent(MainActivity.this, AccountActivity.class);
+
+        startActivity(account);
+    }
+
+
+
 }
 
 

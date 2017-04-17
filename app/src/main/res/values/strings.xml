@@ -17,6 +17,7 @@
     <string name="date">Date</string>
     <string name="title_activity_signup">SignupActivity</string>
     <string name="auth_failed">Echec</string>
+    <string name="logoutButton">Log out</string>
 
 
 </resources>

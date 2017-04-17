@@ -83,9 +83,6 @@ public class SearchItinaryActivity extends AppCompatActivity {
 
             public void goToNextActivity(View view) {
 
-
-
-
                 EditText search_destination = (EditText) findViewById(R.id.search_destination);
                 EditText search_departure = (EditText) findViewById(R.id.search_departure);
                 EditText search_date = (EditText) findViewById(R.id.search_date);

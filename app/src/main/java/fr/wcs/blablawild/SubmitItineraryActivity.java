@@ -6,10 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Exclude;
 import com.google.firebase.database.FirebaseDatabase;
 
 
@@ -30,7 +32,7 @@ public class SubmitItineraryActivity extends AppCompatActivity {
     public EditText editTextPrice;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
-    private FirebaseUser user;
+    private String uid;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
 
     @Override
@@ -44,26 +46,20 @@ public class SubmitItineraryActivity extends AppCompatActivity {
         editTextPrice = (EditText) findViewById(R.id.price);
         editTextDestination = (EditText) findViewById(R.id.destination);
         mAuth = FirebaseAuth.getInstance();
-        final FirebaseUser user = mAuth.getCurrentUser();
-
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = mAuth.getCurrentUser();
-            }
-        };
-
-
 
 
         buttonCreate.setOnClickListener(new View.OnClickListener() {
 
+            @Override
             public void onClick(View v){
 
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference myRef = database.getReference("Itinerary");
 
-
+                FirebaseUser user = mAuth.getCurrentUser();
+                if(user != null){
+                    uid = user.getUid();
+                }
 
 
                 String departureDate = editTextDate.getText().toString();
@@ -72,39 +68,28 @@ public class SubmitItineraryActivity extends AppCompatActivity {
                 String driverLastName = "Scholes";
                 String departure = editTextDeparture.getText().toString().trim();
                 String destination = editTextDestination.getText().toString().trim();
-                String userId = user.getUid();
 
 
-                ItineraryModel itinerary = new ItineraryModel(driverFirstName, driverLastName, departureDate, price, departure, destination, userId  );
+
+                ItineraryModel itinerary = new ItineraryModel(driverFirstName, driverLastName, departureDate, price, departure, destination, uid  );
 
                 itinerary.setDepartureDate(departureDate);
                 itinerary.setPrice(price);
                 itinerary.setDriverFistname(driverFirstName);
                 itinerary.setDriverLastName(driverLastName);
-                itinerary.setUserId(driverLastName);
+
 
                 myRef.push().setValue(itinerary);
 
 
+                Toast.makeText(SubmitItineraryActivity.this, "Trajet créé", Toast.LENGTH_SHORT).show();
 
-
+                finish();
             }
-
-
-
         });
-
-
-
     }
 
-    @Override
-    public void onStart(){
-      super.onStart();
-      mAuth.addAuthStateListener(mAuthListener);
 
-
-    }
 
 
 

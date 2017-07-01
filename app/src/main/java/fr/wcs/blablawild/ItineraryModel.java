@@ -58,6 +58,7 @@ public class ItineraryModel {
         return mDestination;
     }
 
+    public String getmUserId(){return mUserId;}
 
 
 

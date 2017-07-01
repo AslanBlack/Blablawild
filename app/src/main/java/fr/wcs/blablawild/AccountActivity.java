@@ -31,17 +31,18 @@ public class AccountActivity extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user == null) {
-                    // User is signed in
-                    Intent changeToAccount = new Intent(AccountActivity.this, SignupActivity.class);
+                if (user != null) {
 
-                    startActivity(changeToAccount);
-
-                } else {
-                    // User is signed out
-                    //Log.d(TAG, "onAuthStateChanged:signed_out");
                     mTextViewEmail.setText(user.getEmail());
                     mTextViewName.setText(user.getDisplayName());
+
+                } else {
+
+
+
+                    Intent backToMaain = new Intent(AccountActivity.this, MainActivity.class);
+
+                    startActivity(backToMaain);
                 }
                 // ...
             }

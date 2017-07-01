@@ -18,6 +18,9 @@
     <string name="title_activity_signup">SignupActivity</string>
     <string name="auth_failed">Echec</string>
     <string name="logoutButton">Log out</string>
+    <string name="password">Type your password</string>
+    <string name="email">Enter your email address</string>
+    <string name="validate">Valider</string>
 
 
 </resources>

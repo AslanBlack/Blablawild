@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user == null) {
-                    Toast.makeText(MainActivity.this, "no user", Toast.LENGTH_SHORT).show();
+
                     mbuttonAccount.setVisibility(View.INVISIBLE);
                     mTexViewLogin.setVisibility(View.VISIBLE);
                     mTexViewSignup.setVisibility(View.VISIBLE);
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                     mbuttonAccount.setVisibility(View.VISIBLE);
                     mTexViewLogin.setVisibility(View.INVISIBLE);
                     mTexViewSignup.setVisibility(View.INVISIBLE);
-                    Toast.makeText(MainActivity.this, user.getUid(), Toast.LENGTH_SHORT).show();
+
                 }
             }
         };

@@ -55,7 +55,7 @@
         android:id="@+id/textViewLogin"
         android:layout_width="59dp"
         android:layout_height="29dp"
-        android:text="Log in"
+        android:text="@string/login"
         android:onClick="goToSignin"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -68,7 +68,7 @@
         android:id="@+id/textViewSignup"
         android:layout_width="58dp"
         android:layout_height="33dp"
-        android:text="Sign up"
+        android:text="@string/sign_up"
         android:onClick="goToSignup"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -85,7 +85,7 @@
         android:layout_above="@+id/go"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="63dp"
-        android:text="Mon Compte"
+        android:text="@string/account"
         android:onClick="openAccount"
         />
 

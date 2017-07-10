@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void goToSignin (View view){
+    public void goToSignin(View view){
 
         Intent changeToSignin = new Intent(MainActivity.this, SigninActivity.class);
 
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public  void openAccount(){
+    public void openAccount(View view){
         Intent account = new Intent(MainActivity.this, AccountActivity.class);
 
         startActivity(account);

@@ -17,6 +17,12 @@
     <string name="date">Date</string>
     <string name="title_activity_signup">SignupActivity</string>
     <string name="auth_failed">Echec</string>
+    <string name="account">Mon Compte</string>
+    <string name="sign_up">Créer un compte</string>
+    <string name="login">Connexion</string>
+    <string name="email">email</string>
+    <string name="password">Mot de passe</string>
+    <string name="validate_form">Valider</string>
 
 
 </resources>

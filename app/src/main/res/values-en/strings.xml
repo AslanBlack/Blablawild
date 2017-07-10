@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bla Bla Wild</string>
+    <string name="account">My Account</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="auth_failed">Fail</string>
+    <string name="create">Create a trip</string>
+    <string name="createTripButton">"Create a trip "</string>
+    <string name="date">Date</string>
+    <string name="departure">Departure</string>
+    <string name="destination">Destination</string>
+    <string name="email">email</string>
+    <string name="error">Please enter departure and arrival cities</string>
+    <string name="go">Look for a trip</string>
+    <string name="login">Log in</string>
+    <string name="password">Password</string>
+    <string name="price">Price</string>
+    <string name="search_button">Search</string>
+    <string name="search_date">Date</string>
+    <string name="search_departure">Departure</string>
+    <string name="search_destination">Destination</string>
+    <string name="search_text">Search</string>
+    <string name="sign_up">Create Account</string>
+    <string name="title_activity_signup">SignupActivity</string>
+    <string name="validate_form">Validate</string>
+</resources>

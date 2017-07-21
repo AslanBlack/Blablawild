@@ -2,6 +2,7 @@ package fr.wcs.blablawild;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -9,8 +10,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
+
+    private FirebaseAuth.AuthStateListener mAuthListener;
+    private TextView textViewUsername;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,10 +27,28 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        textViewUsername = (TextView) findViewById(R.id.editTextUsername);
 
+
+
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser(
+                );
+                if (user != null) {
+                    textViewUsername.setText(user.getDisplayName());
+
+
+
+                } else {
+                    // User is signed out
+                    //Log.d(TAG, "onAuthStateChanged:signed_out");
+                }
+                // ...
+            }
+        };
     }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -63,29 +89,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goToSignup (View view){
-
         Intent changeToSignup = new Intent(MainActivity.this, SignupActivity.class);
-
         startActivity(changeToSignup);
-
     }
 
     public void goToSignin(View view){
 
         Intent changeToSignin = new Intent(MainActivity.this, SigninActivity.class);
-
         startActivity(changeToSignin);
-
     }
 
     public void openAccount(View view){
         Intent account = new Intent(MainActivity.this, AccountActivity.class);
-
         startActivity(account);
     }
-
-
-
 }
 
 

@@ -23,6 +23,9 @@
     <string name="email">email</string>
     <string name="password">Mot de passe</string>
     <string name="validate_form">Valider</string>
+    <string name="logout">Déconnexion</string>
+    <string name="choose_a_username">Choose a username</string>
+    <string name="update_profile_button">Enregistrer les moifications</string>
 
 
 </resources>
